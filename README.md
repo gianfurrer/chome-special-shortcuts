@@ -1,4 +1,4 @@
-# chome-special-shortcuts
+# chrome-special-shortcuts
 To set special extension shortcuts like "Ctrl + Tab"
 
 ## How it works
