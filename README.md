@@ -5,28 +5,10 @@ To set special extension shortcuts like "Ctrl + Tab"
 
 This script only works on the chrome://extensions/shortcuts page.
 
-Open the developer console (F12 -> Console) and execute the following script:
+Open the developer console (F12 -> Console) and copy & paste the content of this [script](./special-shortcuts.js).
 
-```js
-document.querySelector("extensions-manager").shadowRoot
-.querySelector("cr-view-manager").querySelector("extensions-keyboard-shortcuts").shadowRoot
-.querySelectorAll("extensions-shortcut-input").forEach(i => {
-i.onclick = e => {
-    e.preventDefault()
-    chrome.developerPrivate.updateExtensionCommand({
-        extensionId: i.item,
-        commandName: i.commandName,
-        keybinding: prompt("Special Keybinding:")
-    })
-}
-});
-```
+1. Click on the shortcut input you'd like to set the special binding on
+2. Type the shortcut combination (e.g. Ctrl+Tab) into the prompt input
+3. Click "OK"
 
-After that you can click on the shortcut input you'd like to set the special binding on.
-A prompt with an input should show up.
-
-There you can type in the shortcut you want. Here are a few input examples:
-* Ctrl+Tab
-* Ctrl+Shift+Tab
-
-As soon as you click "OK", the shortcut should be set and ready to use.
+The shortcut should not be set and ready to use.
